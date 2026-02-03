@@ -36,7 +36,13 @@ class ProductDetailFragment : Fragment(R.layout.fragment_product_detail){
 
         binding.tvProductName.text = product.name
         binding.tvProductPrice.text = "${product.price} ₺"
-        binding.tvProductDescription.text = "Bu ürün yüksek kaliteye sahiptir."
+        binding.tvProductDescription.text =
+            "Bu ürün günlük kullanım için tasarlanmıştır.\n\n" +
+                    "• Yüksek kaliteli malzeme\n" +
+                    "• Uzun ömürlü pil\n" +
+                    "• Modern ve şık tasarım\n" +
+                    "• Hızlı performans"
+
 
         requireActivity().title = product.name
         binding.btnDelete.setOnClickListener {

@@ -27,7 +27,11 @@ class ProductListFragment  : Fragment  (R.layout.fragment_product_list) {
         _binding = FragmentProductListBinding.bind(view)
 
         adapter = ProductAdapter(emptyList()) { selectedProduct ->
+            val action =
+                ProductListFragmentDirections
+                    .actionProductListFragmentToProductDetailFragment(selectedProduct)
 
+            findNavController().navigate(action)
         }
 
         binding.rvproductlist.layoutManager= LinearLayoutManager(requireContext())
